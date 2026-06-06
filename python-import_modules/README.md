@@ -25,10 +25,3 @@ This project explores the concepts of modules, importing functions, handling com
 | **7. Easy print** | `101-easy_print.py` | An advanced brainteaser that prints `#pythoniscool` without using `print`, `eval`, or `open`. |
 | **8. ByteCode -> Python #3** | `102-magic_calculation.py` | An advanced task reconstructing a Python function from its raw Bytecode instructions. |
 | **9. Fast alphabet** | `103-fast_alphabet.py` | Prints the uppercase alphabet in exactly 3 lines without loops or string literals. |
-
----
-
-## Requirements
-* **Environment:** Ubuntu 22.04 LTS
-* **Python Version:** Python 3.10
-* **Style Guide:** Code compliant with `pycodestyle` (version 2.7.*)
