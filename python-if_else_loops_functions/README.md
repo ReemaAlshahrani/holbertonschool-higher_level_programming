@@ -28,4 +28,4 @@ This directory contains tasks focused on learning basic control flow structures 
 | `101-remove_char_at.py` | Creates copies of raw character chains while removing specified indices safely via explicit boundary protections. |
 
 ## Author
-* **Reema Alshahrani** - [GitHub Profile](https://github.com/YOUR_GITHUB_USERNAME_HERE)
+* **Reema Alshahrani** 
