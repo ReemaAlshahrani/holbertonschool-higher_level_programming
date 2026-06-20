@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module defines a Rectangle class with width and height properties,
-methods for area and perimeter, custom string representation, and a repr method.
+methods for area/perimeter, custom string, and repr representation.
 """
 
 
