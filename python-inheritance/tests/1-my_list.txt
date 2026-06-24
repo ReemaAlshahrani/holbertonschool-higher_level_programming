@@ -34,3 +34,16 @@ Test with an empty list:
 >>> empty_list.print_sorted()
 []
 
+Test with negative numbers:
+>>> mixed_list = MyList()
+>>> mixed_list.append(2)
+>>> mixed_list.append(1)
+>>> mixed_list.append(0)
+>>> mixed_list.append(-2)
+>>> mixed_list.append(-4)
+>>> print(mixed_list)
+[2, 1, 0, -2, -4]
+>>> mixed_list.print_sorted()
+[-4, -2, 0, 1, 2]
+>>> print(mixed_list)
+[2, 1, 0, -2, -4]
