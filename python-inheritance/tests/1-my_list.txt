@@ -26,3 +26,11 @@ Print the sorted list:
 Verify the original list is unchanged:
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
+Test with an empty list:
+>>> empty_list = MyList()
+>>> print(empty_list)
+[]
+>>> empty_list.print_sorted()
+[]
+
