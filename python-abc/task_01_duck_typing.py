@@ -22,8 +22,8 @@ class Circle(Shape):
     """Concrete class representing a circle, inheriting from Shape."""
 
     def __init__(self, radius):
-        """Initialize the circle with a radius."""
-        self.radius = radius
+        """Initialize the circle with a positive radius using abs()."""
+        self.radius = abs(radius)
 
     def area(self):
         """Calculate and return the area of the circle."""
