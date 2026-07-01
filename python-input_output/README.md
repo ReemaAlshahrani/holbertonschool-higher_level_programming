@@ -1,0 +1,1 @@
+This project is part of the Higher Level Programming curriculum at Holberton School. It covers the fundamentals of handling file input and output operations in Python, as well as working with JSON strings for serialization and deserialization.
