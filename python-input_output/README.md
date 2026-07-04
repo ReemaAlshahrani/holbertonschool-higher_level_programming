@@ -33,10 +33,3 @@ This project is part of the Higher Level Programming curriculum. It covers how t
 
 ---
 
-## How to Run Examples
-
-### 1. Appending arguments to a JSON list (7-add_item.py):
-```bash
-./7-add_item.py Best School 89 Python
-cat add_item.json
-# Output: ["Best", "School", "89", "Python"]
