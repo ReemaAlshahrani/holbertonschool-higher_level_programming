@@ -34,8 +34,10 @@ def filter_states_by_name():
     # Create a cursor object
     cursor = db.cursor()
 
-    # Execute SQL query using format with BINARY for case-sensitive matching
-    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(state_name)
+    # Execute SQL query using format with user input
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
+        state_name
+    )
     cursor.execute(query)
 
     # Fetch all rows
