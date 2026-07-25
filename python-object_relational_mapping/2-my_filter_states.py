@@ -21,7 +21,6 @@ def filter_states_by_name():
     db_name = sys.argv[3]
     state_name = sys.argv[4]
 
-    # Connect to MySQL database
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -31,22 +30,16 @@ def filter_states_by_name():
         charset="utf8"
     )
 
-    # Create a cursor object
     cursor = db.cursor()
-
-    # Execute SQL query using format with user input
     query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
         state_name
     )
     cursor.execute(query)
 
-    # Fetch all rows
     rows = cursor.fetchall()
-
     for row in rows:
         print(row)
 
-    # Close cursor and database connection
     cursor.close()
     db.close()
 
