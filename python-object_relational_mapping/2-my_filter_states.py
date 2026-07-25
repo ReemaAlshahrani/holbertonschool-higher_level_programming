@@ -11,7 +11,7 @@ import sys
 def filter_states_by_name():
     """
     Connects to MySQL database and prints states matching the user argument
-    ordered by states.id in ascending order.
+    ordered by states.id in ascending order using BINARY for exact match.
     """
     if len(sys.argv) != 5:
         return
@@ -31,7 +31,8 @@ def filter_states_by_name():
     )
 
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
+    # Using BINARY to ensure strict case-sensitive matching as expected
+    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(
         state_name
     )
     cursor.execute(query)
