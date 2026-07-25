@@ -11,8 +11,8 @@ import sys
 
 def safe_filter_states():
     """
-    Connects to MySQL database and safely prints states matching the user argument
-    ordered by states.id in ascending order.
+    Connects to MySQL database and safely prints states
+    matching the user argument ordered by states.id.
     """
     if len(sys.argv) != 5:
         return
@@ -22,7 +22,6 @@ def safe_filter_states():
     db_name = sys.argv[3]
     state_name = sys.argv[4]
 
-    # Connect to MySQL database
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -32,20 +31,14 @@ def safe_filter_states():
         charset="utf8"
     )
 
-    # Create a cursor object
     cursor = db.cursor()
-
-    # Execute SQL query safely using parameterized queries to prevent SQL injection
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cursor.execute(query, (state_name,))
 
-    # Fetch all rows
     rows = cursor.fetchall()
-
     for row in rows:
         print(row)
 
-    # Close cursor and database connection
     cursor.close()
     db.close()
 
