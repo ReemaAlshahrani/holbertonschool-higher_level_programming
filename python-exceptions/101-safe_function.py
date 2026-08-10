@@ -6,7 +6,7 @@ import sys
 
 
 def safe_function(fct, *args):
-    """Executes a function and returns its result or None if an error occurs."""
+    """Executes a function safely."""
     try:
         return fct(*args)
     except Exception as err:
