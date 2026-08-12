@@ -1,0 +1,66 @@
+======================================
+How to Use 101-lazy_matrix_mul.py
+======================================
+
+Importing the function:
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Normal Matrix Multiplication:
+    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+    array([[ 7, 10],
+           [15, 22]])
+
+    >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+    array([[13, 16]])
+
+Floats and Integers Mix:
+    >>> lazy_matrix_mul([[1.5, 2.0], [3.0, 4.5]], [[2.0, 0.5], [1.0, 3.0]])
+    array([[ 5.  ,  6.75],
+           [10.5 , 15.  ]])
+
+Validation Test Cases (NumPy Exceptions):
+
+1. Non-list or non-array types:
+    >>> lazy_matrix_mul("not a list", [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: ...
+
+    >>> lazy_matrix_mul([[1, 2], [3, 4]], "not a list")
+    Traceback (most recent call last):
+        ...
+    TypeError: ...
+
+2. Non-numerical elements:
+    >>> lazy_matrix_mul([[1, "2"], [3, 4]], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: ...
+
+3. Empty matrices:
+    >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    ValueError: ...
+
+    >>> lazy_matrix_mul([[1, 2], [3, 4]], [])
+    Traceback (most recent call last):
+        ...
+    ValueError: ...
+
+4. Incompatible dimensions for multiplication:
+    >>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    ValueError: ...
+
+5. Missing required positional arguments:
+    >>> lazy_matrix_mul([[1, 2]])
+    Traceback (most recent call last):
+        ...
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+    >>> lazy_matrix_mul()
+    Traceback (most recent call last):
+        ...
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
