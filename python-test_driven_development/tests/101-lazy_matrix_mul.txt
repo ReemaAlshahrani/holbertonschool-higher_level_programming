@@ -18,7 +18,7 @@ Floats and Integers Mix:
     array([[ 5.  ,  6.75],
            [10.5 , 15.  ]])
 
-Validation Test Cases:
+Validation Test Cases (NumPy Exceptions):
 
 1. Scalar / String operand:
     >>> lazy_matrix_mul("Holberton", [[5, 6], [7, 8]])
@@ -48,3 +48,14 @@ Validation Test Cases:
     Traceback (most recent call last):
         ...
     ValueError: ...
+
+5. Missing required positional arguments:
+    >>> lazy_matrix_mul([[1, 2]])
+    Traceback (most recent call last):
+        ...
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+    >>> lazy_matrix_mul()
+    Traceback (most recent call last):
+        ...
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
