@@ -1,0 +1,55 @@
+====================================
+How to Use 5-text_indentation.py
+====================================
+
+Importing the function:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Normal Printing Case:
+    >>> text_indentation("Hello. World? How: are you")
+    Hello.
+    <BLANKLINE>
+    World?
+    <BLANKLINE>
+    How:
+    <BLANKLINE>
+    are you
+
+Trimming Leading and Trailing Spaces:
+    >>> text_indentation("   Hello world.   Next sentence?   Final statement:   End   ")
+    Hello world.
+    <BLANKLINE>
+    Next sentence?
+    <BLANKLINE>
+    Final statement:
+    <BLANKLINE>
+    End
+
+Text Without Delimiters:
+    >>> text_indentation("Simple sentence with no punctuation marks")
+    Simple sentence with no punctuation marks
+
+Empty String Case:
+    >>> text_indentation("")
+
+Invalid Types - Non-string Arguments (Raises TypeError):
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation(["Hello", "world"])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Missing Position Argument:
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
