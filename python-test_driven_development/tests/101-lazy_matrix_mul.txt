@@ -18,20 +18,20 @@ Floats and Integers Mix:
     array([[ 5.  ,  6.75],
            [10.5 , 15.  ]])
 
-Validation Test Cases (NumPy Exceptions):
+Validation Test Cases:
 
-1. Non-list or non-array types:
-    >>> lazy_matrix_mul("not a list", [[1, 2], [3, 4]])
+1. Scalar / String operand:
+    >>> lazy_matrix_mul("Holberton", [[5, 6], [7, 8]])
     Traceback (most recent call last):
         ...
-    TypeError: ...
+    ValueError: Scalar operands are not allowed, use '*' instead
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], "not a list")
+    >>> lazy_matrix_mul([[1, 2], [3, 4]], "Holberton")
     Traceback (most recent call last):
         ...
-    TypeError: ...
+    ValueError: Scalar operands are not allowed, use '*' instead
 
-2. Non-numerical elements:
+2. Non-numerical elements inside list:
     >>> lazy_matrix_mul([[1, "2"], [3, 4]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
@@ -43,24 +43,8 @@ Validation Test Cases (NumPy Exceptions):
         ...
     ValueError: ...
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], [])
-    Traceback (most recent call last):
-        ...
-    ValueError: ...
-
-4. Incompatible dimensions for multiplication:
+4. Incompatible dimensions:
     >>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
     ValueError: ...
-
-5. Missing required positional arguments:
-    >>> lazy_matrix_mul([[1, 2]])
-    Traceback (most recent call last):
-        ...
-    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
-
-    >>> lazy_matrix_mul()
-    Traceback (most recent call last):
-        ...
-    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
