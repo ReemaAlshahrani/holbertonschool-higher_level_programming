@@ -81,3 +81,9 @@ Div Validation - Division by Zero:
     Traceback (most recent call last):
         ...
     ZeroDivisionError: division by zero
+
+Missing Arguments:
+    >>> matrix_divided([[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
