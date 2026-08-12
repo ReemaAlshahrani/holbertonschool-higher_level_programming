@@ -18,44 +18,54 @@ Floats and Integers Mix:
     array([[ 5.  ,  6.75],
            [10.5 , 15.  ]])
 
-Validation Test Cases (NumPy Exceptions):
+Test Cases & Exception Handling:
 
-1. Scalar / String operand:
+1. String / Scalar Operands:
     >>> lazy_matrix_mul("Holberton", [[5, 6], [7, 8]])
     Traceback (most recent call last):
         ...
     ValueError: Scalar operands are not allowed, use '*' instead
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], "Holberton")
+    >>> lazy_matrix_mul([[5, 6], [7, 8]], "Holberton")
     Traceback (most recent call last):
         ...
     ValueError: Scalar operands are not allowed, use '*' instead
 
-2. Non-numerical elements inside list:
-    >>> lazy_matrix_mul([[1, "2"], [3, 4]], [[1, 2], [3, 4]])
+2. Empty Inner Lists:
+    >>> lazy_matrix_mul([[]], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+        ...
+    ValueError: ...
+
+    >>> lazy_matrix_mul([[5, 6], [7, 8]], [[]])
+    Traceback (most recent call last):
+        ...
+    ValueError: ...
+
+3. Non-numerical Elements:
+    >>> lazy_matrix_mul([[5, "6"], [7, 8]], [[5, 6], [7, 8]])
     Traceback (most recent call last):
         ...
     TypeError: ...
 
-3. Empty matrices:
-    >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
+    >>> lazy_matrix_mul([[5, 6], [7, 8]], [[5, "6"], [7, 8]])
+    Traceback (most recent call last):
+        ...
+    TypeError: ...
+
+4. Non-rectangular Matrices:
+    >>> lazy_matrix_mul([[5, 6, 10], [7, 8]], [[5, 6], [7, 8]])
     Traceback (most recent call last):
         ...
     ValueError: ...
 
-4. Incompatible dimensions:
-    >>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4]])
+    >>> lazy_matrix_mul([[5, 6], [7, 8]], [[5, 6, 1], [7, 8]])
     Traceback (most recent call last):
         ...
     ValueError: ...
 
-5. Missing required positional arguments:
-    >>> lazy_matrix_mul([[1, 2]])
+5. Incompatible Matrix Dimensions:
+    >>> lazy_matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
-
-    >>> lazy_matrix_mul()
-    Traceback (most recent call last):
-        ...
-    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+    ValueError: ...
