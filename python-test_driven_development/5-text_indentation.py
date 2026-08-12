@@ -16,20 +16,18 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    c = 0
-    length = len(text)
+    # Remove trailing spaces from the end of the entire string
+    text = text.strip(" ")
 
-    # Skip initial leading spaces
-    while c < length and text[c] == ' ':
-        c += 1
-
-    while c < length:
-        print(text[c], end="")
-        if text[c] in ".?:":
-            print("\n")
-            c += 1
-            # Skip spaces immediately following the delimiter
-            while c < length and text[c] == ' ':
-                c += 1
-            continue
-        c += 1
+    flag = 0
+    for char in text:
+        if flag == 0:
+            if char == ' ':
+                continue
+            else:
+                flag = 1
+        if flag == 1:
+            print(char, end="")
+            if char in ".?:":
+                print("\n")
+                flag = 0
