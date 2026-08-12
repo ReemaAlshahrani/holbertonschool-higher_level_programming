@@ -11,11 +11,9 @@ def lazy_matrix_mul(m_a, m_b):
         m_b: second matrix
 
     Returns:
-        The matrix multiplication result.
+        The matrix multiplication result as a NumPy ndarray.
     """
-    if not isinstance(m_a, (list, np.ndarray)):
-        raise TypeError("m_a must be a list")
-    if not isinstance(m_b, (list, np.ndarray)):
-        raise TypeError("m_b must be a list")
-
-    return np.matmul(m_a, m_b)
+    try:
+        return np.matmul(m_a, m_b)
+    except TypeError as e:
+        raise TypeError(str(e))
