@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Items List</title>
+</head>
+<body>
+    <!-- Include shared header -->
+    {% include 'header.html' %}
+    
+    <h1>Items List</h1>
+
+    <!-- Conditional statement to check if the items list is not empty -->
+    {% if items %}
+        <ul>
+            <!-- Loop through each item in the list -->
+            {% for item in items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <!-- Message displayed if the list is empty -->
+        <p>No items found.</p>
+    {% endif %}
+
+    <!-- Include shared footer -->
+    {% include 'footer.html' %}
+</body>
+</html>
