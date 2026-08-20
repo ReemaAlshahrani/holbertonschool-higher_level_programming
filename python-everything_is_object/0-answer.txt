@@ -1,0 +1,2 @@
+# Built-in function to check the type of any object
+type
