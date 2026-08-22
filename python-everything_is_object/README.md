@@ -1,6 +1,6 @@
 # Python - Everything is Object
 
-This repository contains advanced Python programming exercises focusing on how CPython handles objects, memory management, variable references, mutability, caching (`NSMALLPOSINTS`, `NSMALLNEGINTS`), and internal data structures.
+This directory contains advanced Python programming exercises focusing on how CPython handles objects, memory management, variable references, mutability, caching (`NSMALLPOSINTS`, `NSMALLNEGINTS`), and internal data structures.
 
 ## Comprehensive Tasks & Answers Summary
 
