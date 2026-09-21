@@ -1,4 +1,6 @@
 #!/usr/bin/node
+
+// Function to add two command-line arguments converted to integers
 function add (a, b) {
   return parseInt(a) + parseInt(b);
 }
